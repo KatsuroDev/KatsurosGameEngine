@@ -1,0 +1,8 @@
+# So here we ignore things.
+
+
+# We are gonna ignore the build folder's content except the res folder.
+# Since resources cannot be created by the compilation.
+
+build/*
+!build/res/
