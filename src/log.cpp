@@ -1,11 +1,11 @@
 //
-//  log.cpp
+//  Log.cpp
 //
 //
 //  Created by Thomas Lessard on 2020-03-02.
 //
 
-#include "log.h"
+#include "Log.h"
 
 #include <iostream>
 
