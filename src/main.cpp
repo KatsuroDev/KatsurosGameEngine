@@ -1,7 +1,8 @@
-#include <iostream>
+#include "log.hpp"
 
 int main()
 {
-  std::cout << "Hello World !";
-  return 0;
+    Log::Info("Hello World!");
+
+    return 0;
 }
