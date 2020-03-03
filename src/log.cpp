@@ -5,7 +5,7 @@
 //  Created by Thomas Lessard on 2020-03-02.
 //
 
-#include "log.hpp"
+#include "log.h"
 
 #include <iostream>
 

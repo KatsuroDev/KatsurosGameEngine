@@ -1,12 +1,12 @@
 //
-//  log.hpp
+//  log.h
 //
 //
 //  Created by Thomas Lessard on 2020-03-02.
 //
 
-#ifndef log_hpp
-#define log_hpp
+#ifndef LOG_H
+#define LOG_H
 
 class Log
 {
@@ -18,4 +18,4 @@ public:
     static void Info(const char* msg);
 };
 
-#endif /* log_hpp */
+#endif /* log_h */
