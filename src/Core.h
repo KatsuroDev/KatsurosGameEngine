@@ -13,8 +13,8 @@ public:
   void Start();
   void Stop();
 private:
-  Window* m_window;
-  bool m_running;
-}
+  Window* m_window = nullptr;
+  bool m_running = false;
+};
 
 #endif
