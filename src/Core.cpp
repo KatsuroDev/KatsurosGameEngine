@@ -17,6 +17,11 @@ void Core::Start()
     m_window->WindowSwapBuffers();
     m_window->WindowPollEvents();
     if(m_window->WindowShouldClose())
-      m_running = false;
+      this->Stop();
   }
+}
+
+void Core::Stop()
+{
+  m_running = false;
 }
