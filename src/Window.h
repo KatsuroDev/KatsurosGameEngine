@@ -3,7 +3,6 @@
 
 #include <GL/glew.h>
 #include <iostream>
-#include <string>
 #include <GLFW/glfw3.h>
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height);

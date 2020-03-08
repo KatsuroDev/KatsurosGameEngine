@@ -33,10 +33,17 @@ Window::Window(int width, int height, const char* title):
     exit(404);
 }
 
+Window::~Window()
+{
+  glfwTerminate();
+}
+
 bool Window::WindowShouldClose()
 {
   return glfwWindowShouldClose(m_window);
 }
+
+// Use a getter instead ?
 
 void Window::WindowSwapBuffers()
 {
