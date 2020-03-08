@@ -9,17 +9,26 @@
 
 #include <iostream>
 
+void Log::Critical(const char* msg, unsigned int error)
+{
+	std::cerr << "ERROR: " << msg << '\n';
+	exit(error);
+}
+
 void Log::Error(const char* msg)
 {
-    std::cout << "ERROR: " << msg << '\n';
+	//if (m_LogLevel < Log::LogLevel::LogCritical)
+		std::cerr << "ERROR: " << msg << '\n';
 }
 
 void Log::Warn(const char* msg)
 {
-    std::cout << "WARN: " << msg << '\n';
+	//if (m_LogLevel < Log::LogLevel::LogError)
+		std::cerr << "WARN: " << msg << '\n';
 }
 
 void Log::Info(const char* msg)
 {
-    std::cout << "INFO: " << msg << '\n';
+	//if (m_LogLevel < Log::LogLevel::LogWarn)
+		std::cerr << "INFO: " << msg << '\n';
 }
