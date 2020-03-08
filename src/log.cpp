@@ -1,5 +1,5 @@
 //
-//  Log.cpp
+//  Log.cpp with a capital L
 //
 //
 //  Created by Thomas Lessard on 2020-03-02.

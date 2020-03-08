@@ -1,5 +1,5 @@
 //
-//  Log.h
+//  Log.h with a capital L
 //
 //
 //  Created by Thomas Lessard on 2020-03-02.
