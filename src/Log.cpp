@@ -23,16 +23,11 @@
 
 
 
-std::ofstream Log::m_LogFile;
-
-
-
-
-
-void Log::Init()
+/*void Log::Init(std::ofstream &logFile)
 {
+	m_LogFile = logFile;
 	m_LogFile.open("log/debug.log", std::ios::out);
-}
+}*/
 
 void Log::Critical(const char* msg, unsigned int error)
 {
@@ -45,7 +40,7 @@ void Log::Error(const char* msg)
 {
 	if (LOG_LEVEL < LOG_ERROR)
 	{
-		std::cerr << "ERROR: " << msg << '\n';
+		std::cerr << "["<< Log::GetTime() << "] ERROR: " << msg << '\n';
 		Log::WriteLog(LOG_ERROR, msg);
 	}
 }
@@ -54,7 +49,7 @@ void Log::Warn(const char* msg)
 {
 	if (LOG_LEVEL < LOG_WARN)
 	{
-		std::cerr << "WARN: " << msg << '\n';
+		std::cerr << "["<< Log::GetTime() << "] WARN: " << msg << '\n';
 		Log::WriteLog(LOG_WARN, msg);
 	}
 }
@@ -63,33 +58,33 @@ void Log::Info(const char* msg)
 {
 	if (LOG_LEVEL < LOG_INFO)
 	{
-		std::cerr << "INFO: " << msg << '\n';
-		//Log::WriteLog(LOG_INFO, msg);
+		std::cerr << "["<< Log::GetTime() << "] INFO: " << msg << '\n';
+		Log::WriteLog(LOG_INFO, msg);
 	}
 }
 
 void Log::WriteLog(const int logLevel, const char* msg, unsigned int error)
 {
-	if(!m_LogFile)
+	/*if(!m_LogFile)
 		Log::Error("Log file not created or unuseable");
 	else
 	{
 		switch (logLevel)
 		{
-			case 1:
+			case LOG_INFO:
 				m_LogFile << "["<< Log::GetTime() << "] INFO: " << msg << "\n";
 				break;
-			case 2:
+			case LOG_WARN:
 				m_LogFile << "["<< Log::GetTime() << "] WARN: " << msg << "\n";
 				break;
-			case 3:
+			case LOG_ERROR:
 				m_LogFile << "["<< Log::GetTime() << "] ERROR: " << msg << "\n";
 				break;
-			case 4:
+			case LOG_CRITICAL:
 				m_LogFile << "["<< Log::GetTime() << "] CRITICAL ERROR: " << msg << " [Error : " << error << "]" <<'\n';
 				break;
 		}
-	}
+	}*/
 }
 
 const std::string Log::GetTime()

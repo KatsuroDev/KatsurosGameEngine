@@ -15,7 +15,7 @@
 class Log
 {
 public:
-	static void Init();
+//	static void Init(std::ofstream &logFile);
 
 	static void Critical(const char* msg, unsigned int error);
 
@@ -25,14 +25,14 @@ public:
 
 	static void Info(const char* msg);
 
-	inline static std::ofstream& GetLogFile() {return m_LogFile;}
+//	inline static std::ofstream& GetLogFile() {return m_LogFile;}
 
 
 
 private:
 	static void WriteLog(const int logLevel, const char* msg, unsigned int error = 0);
 	static const std::string GetTime();
-	static std::ofstream m_LogFile;
+//	static std::ofstream& m_LogFile;
 
 	/*
 	enum LogLevel

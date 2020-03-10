@@ -12,8 +12,9 @@ Core::~Core()
 
 void Core::Start()
 {
+  //std::ofstream logFile;
   m_running = true;
-  Log::Init();
+  //Log::Init(logFile);
   while(m_running)
   {
     m_window->WindowSwapBuffers();
@@ -26,5 +27,6 @@ void Core::Start()
 void Core::Stop()
 {
   m_running = false;
-  Log::GetLogFile().close();
+  //logFile.close();
+  //delete Log::GetLogFile();
 }
