@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "Log.h"
 
 Window::Window(int width, int height, const char* title):
     m_width(width),
@@ -20,17 +21,16 @@ Window::Window(int width, int height, const char* title):
 
 
   m_window = glfwCreateWindow(m_width, m_height, m_title, NULL, NULL);
-  /*if (window == NULL)
+  if (m_window == NULL)
   {
-    std::cerr << "[ERROR] : Failed to create GLFW window\n"; // Testing if we got the window right
     glfwTerminate();
-    return -1;
-  }*/
+    Log::Critical("GLFW was not able to create the window", 1); // Testing if we got the window right
+  }
   glfwMakeContextCurrent(m_window); // Telling GLFW what current context we'll use.
   glfwSetFramebufferSizeCallback(m_window, framebufferSizeCallback);
 
   if (glewInit() != GLEW_OK) // Init GLEW
-    exit(404);
+    Log::Critical("GLEW could not init", 2);
 }
 
 Window::~Window()

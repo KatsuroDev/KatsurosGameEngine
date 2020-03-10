@@ -9,8 +9,6 @@ int main()
   Window* window = new Window(800, 600, "Test");
   Core* core = new Core(window);
   Log::Info("Hello World!");
-  Log::Error("This is an error :(");
-  Log::Critical("That one crashed the program", 80085);
 
   // Singleton MeshLoader
   Mesh mesh = MeshLoader::Load("object.obj");
@@ -18,6 +16,6 @@ int main()
   delete core;
   delete window;
 
-  std::cout << "\nYou just killed the wrong enemy.";
+  std::cout << "\nYou just killed the wrong enemy.\n";
   return 0;
 }
