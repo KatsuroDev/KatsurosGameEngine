@@ -1,0 +1,30 @@
+#!/bin/bash
+#Make and open the program
+
+read -p "Do you want to make ? [y/n]" choice
+	case $choice in
+ 	 [yY]) make
+ 	 	   cd build
+ 	 	   ./a.out
+ 	 	   cd .. ;;
+ 	 [nN]) cd build
+ 	 	   ./a.out
+ 	 	   cd .. ;;
+ 	 *) echo "Wrong input"
+	esac
+
+while [ $choice = [yYnN] ]
+do
+	read -p "Do you want to make ? [y/n]" choice
+	case $choice in
+ 	 [yY]) make
+ 	 	   cd build
+ 	 	   ./a.out
+ 	 	   cd .. ;;
+ 	 [nN]) cd build
+ 	 	   ./a.out
+ 	 	   cd .. ;;
+ 	 *) echo "Wrong input"
+	esac
+done
+
