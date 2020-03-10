@@ -6,5 +6,7 @@
 
 build/*
 !build/res/
+!build/log/
 !build/glew32.dll
 !build/glfw3.dll
+
