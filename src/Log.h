@@ -1,5 +1,6 @@
 //
 //  Log.h
+//  Log.h with a capital L
 //
 //
 //  Created by Thomas Lessard on 2020-03-02.
@@ -8,7 +9,6 @@
 #ifndef LOG_H
 #define LOG_H
 
-
 #include <string>
 #include <fstream>
 
@@ -16,7 +16,6 @@ class Log
 {
 public:
 //	static void Init(std::ofstream &logFile);
-
 	static void Critical(const char* msg, unsigned int error);
 
 	static void Error(const char* msg);
@@ -26,8 +25,6 @@ public:
 	static void Info(const char* msg);
 
 //	inline static std::ofstream& GetLogFile() {return m_LogFile;}
-
-
 
 private:
 	static void WriteLog(const int logLevel, const char* msg, unsigned int error = 0);
