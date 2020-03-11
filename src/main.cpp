@@ -3,10 +3,11 @@
 #include "Core.h"
 #include "Log.h"
 #include "MeshLoader.h"
+#include "JustArenderTest.h"
 
 int main()
 {
-  Window* window = new Window(800, 600, "Test");
+  /*Window* window = new Window(800, 600, "Test");
   Core* core = new Core(window);
   Log::Info("Hello World!");
 
@@ -16,6 +17,8 @@ int main()
   delete core;
   delete window;
 
-  std::cout << "\nYou just killed the wrong enemy.\n";
+  std::cout << "\nYou just killed the wrong enemy.\n";*/
+  somethingStatic::staticMain();
+
   return 0;
 }
