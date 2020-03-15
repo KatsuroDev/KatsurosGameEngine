@@ -17,8 +17,8 @@ void Core::Start()
   //Log::Init(logFile);
   while(m_running)
   {
-    m_window->WindowSwapBuffers();
     m_window->WindowPollEvents();
+    m_window->WindowSwapBuffers();
     if(m_window->WindowShouldClose())
       this->Stop();
   }
