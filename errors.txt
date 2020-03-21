@@ -3,3 +3,7 @@ ERROR LIST
 1 : GLFW was not able to create a window.
 
 2 : GLEW could not init.
+
+3 : Shader could not compile.
+
+4 : Shader linking error.
