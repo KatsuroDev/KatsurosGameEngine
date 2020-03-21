@@ -15,6 +15,16 @@ public:
   bool WindowShouldClose();
   void WindowSwapBuffers();
   void WindowPollEvents();
+
+  inline GLFWwindow* GetWindow() { return m_window; }
+  inline int GetWidth() { return m_width; }
+  inline int GetHeight() { return m_height; }
+  inline const char* GetTitle() { return m_title; }
+  inline void SetWidth( int width ) { if(width > 0) {m_width = width;} }
+  inline void SetHeight( int height ) { if(height > 0 ) {m_height = height;} }
+  inline void SetTitle( const char* title ) {m_title = title;}
+
+
 private:
   GLFWwindow* m_window;
   int m_width;
