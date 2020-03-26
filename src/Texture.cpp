@@ -13,7 +13,7 @@ int m_magFilter;
 */
 
 Tex2D::Tex2D() :
-  m_mipmapLevel(0), m_internalFormat(GL_RGB), m_width(0), m_height(0), m_format(GL_RGBA), m_data(), m_wrapS(GL_CLAMP_TO_EDGE), m_wrapT(GL_CLAMP_TO_EDGE), m_minFilter(GL_NEAREST), m_magFilter(GL_NEAREST), m_minMipMapFilter(0)
+  m_mipmapLevel(0), m_internalFormat(GL_RGB), m_width(0), m_height(0), m_format(GL_RGBA), m_wrapS(GL_CLAMP_TO_EDGE), m_wrapT(GL_CLAMP_TO_EDGE), m_minFilter(GL_NEAREST), m_magFilter(GL_NEAREST), m_minMipMapFilter(0)
 {
 
 }
