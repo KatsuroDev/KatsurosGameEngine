@@ -12,15 +12,18 @@ int m_minFilter;
 int m_magFilter;
 */
 
-Tex2D::Tex2D() :
-  m_mipmapLevel(0), m_internalFormat(GL_RGB), m_width(0), m_height(0), m_format(GL_RGBA), m_wrapS(GL_CLAMP_TO_EDGE), m_wrapT(GL_CLAMP_TO_EDGE), m_minFilter(GL_NEAREST), m_magFilter(GL_NEAREST), m_minMipMapFilter(0)
-{
+/*
+Tex2Ddata m_texData;
 
+*/
+
+
+Tex2D::Tex2D()
+{
 }
-Tex2D::Tex2D( int width, int height, int mipmapLevel, int internalFormat, int format, int wrapS, int wrapT, int minFilter, int magFilter, int minMipMapFilter) :
-  m_width(width), m_height(height), m_mipmapLevel(mipmapLevel), m_internalFormat(internalFormat), m_format(format), m_wrapS(wrapS), m_wrapT(wrapT), m_minFilter(minFilter), m_magFilter(magFilter), m_minMipMapFilter(m_minMipMapFilter);
+Tex2D::Tex2D(Tex2Ddata texData)
 {
-
+  m_texData = texData;
 }
 
 Tex2d::~Tex2D()

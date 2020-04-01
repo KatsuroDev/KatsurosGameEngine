@@ -3,12 +3,26 @@
 
 
 #include <GL/glew.h>
+// How do I do struct again ?
+struct Tex2Ddata
+{
+  int width = 0;
+  int height = 0;
+  int mipmapLevel = 0;
+  int internalFormat = 0;
+  int format = 0;
+  int wrapS = GL_CLAMP_TO_EDGE;
+  int wrapT = GL_CLAMP_TO_EDGE;
+  int minMipMapFilter = 0;
+  int minFilter = 0;
+  int magFilter = 0;
+};
 
 class Tex2D
 {
 public:
   Tex2D();
-  Tex2D(int width, int height, int mipmapLevel, int internalFormat, int format, int wrapS, int wrapT, int minMipMapFilter, int minFilter, int magFilter);
+  Tex2D(Tex2Ddata texData);
   ~Tex2D();
 
 
@@ -24,20 +38,9 @@ public:
   void Bind();
 
 
-// ALLO! :D Look my Set method.. x)
 private:
   int m_ID;
-  int m_mipmapLevel;
-  int m_internalFormat;
-  int m_width;
-  int m_height;
-  int m_format;
-  //unsigned char* m_data;
-  int m_wrapS;
-  int m_wrapT;
-  int m_minMipMapFilter;
-  int m_minFilter;
-  int m_magFilter;
+  Tex2Ddata m_texData;
 
 
   //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
