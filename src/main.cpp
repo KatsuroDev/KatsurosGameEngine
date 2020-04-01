@@ -3,7 +3,6 @@
 #include "Core.h"
 #include "Log.h"
 #include "MeshLoader.h"
-#include "JustArenderTest.h"
 
 int main()
 {

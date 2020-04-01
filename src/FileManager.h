@@ -2,6 +2,7 @@
 #define FILEMANAGER_H
 
 #include "Texture.h"
+#include <GL/SOIL.h>
 
 class FileManager
 {

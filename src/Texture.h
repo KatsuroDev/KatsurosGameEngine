@@ -33,9 +33,9 @@ public:
   inline void SetFormat(int format) {m_format = format;}
   inline void SetMipmapLevel(int mipmapLevel) {m_mipmapLevel = mipmapLevel;}*/
 
-  void Generate(int width, int height, unsigned char* data);
+  void Generate(unsigned char* data);
 
-  void Bind();
+  void Bind() const;
 
 
 private:
