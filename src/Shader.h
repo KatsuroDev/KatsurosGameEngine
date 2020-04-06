@@ -16,11 +16,12 @@
 class Shader {
 public:
   // The program ID
-  unsigned int ID;
+  unsigned int m_ID;
 
   // Constructor reads and builds the shader
-  Shader(const char* vertexPath, const char* fragmentPath);
+  Shader();
 
+  void Compile(const char* vcode, const char* fcode);
   //void Compile(const std::string &code, int type);
   // Use/Activate the shader
   void Use();
