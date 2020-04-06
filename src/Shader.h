@@ -8,6 +8,10 @@
 #include <sstream>
 #include <string>
 
+#define VERTEX_SHADER 0
+#define FRAGMENT_SHADER 1
+#define PROGRAM_SHADER 2
+
 
 class Shader {
 public:
@@ -16,6 +20,8 @@ public:
 
   // Constructor reads and builds the shader
   Shader(const char* vertexPath, const char* fragmentPath);
+
+  //void Compile(const std::string &code, int type);
   // Use/Activate the shader
   void Use();
   // Utility uniform functions

@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Log.h"
 #include "MeshLoader.h"
+#include "FileManager.h"
 
 int main()
 {
@@ -11,7 +12,7 @@ int main()
   Log::Info("Hello World!");
 
   // Singleton MeshLoader
-  Mesh mesh = MeshLoader::Load("object.obj");
+  //Mesh mesh = MeshLoader::Load("object.obj");
   core->Start();
   delete core;
   delete window;

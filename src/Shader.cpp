@@ -65,6 +65,44 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 
 }
 
+/*void Compile(const std::string &code, int type)
+{
+  unsigned int vertex, fragment;
+  if(type == VERTEX_SHADER)
+  {
+
+    vertex = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertex, 1, &code, NULL);
+    glCompileShader(vertex);
+    CheckCompileErrors(vertex, "VERTEX");
+  }
+  else if (type == FRAGMENT_SHADER)
+  {
+
+    fragment = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragment, 1, &code, NULL);
+    glCompileShader(fragment);
+    CheckCompileErrors(fragment, "FRAGMENT");
+  }
+  else if (type == PROGRAM_SHADER)
+  {
+    ID = glCreateProgram();
+    glAttachShader(ID, vertex);
+    glAttachShader(ID, fragment);
+    glLinkProgram(ID);
+    // Print linking errors if any
+    CheckCompileErrors(ID, "PROGRAM");
+
+    // Delete the shaders as they're linked into our program now and no longer necessary
+    glDeleteShader(vertex);
+    glDeleteShader(fragment);
+  }
+  else
+  {
+    Log::Critical("No known shader of this type", 7);
+  }
+}*/
+
 void Shader::Use()
 {
   glUseProgram(ID);

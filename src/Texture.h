@@ -6,16 +6,16 @@
 // How do I do struct again ?
 struct Tex2Ddata
 {
-  int width = 0;
-  int height = 0;
-  int mipmapLevel = 0;
-  int internalFormat = 0;
-  int format = 0;
-  int wrapS = GL_CLAMP_TO_EDGE;
-  int wrapT = GL_CLAMP_TO_EDGE;
-  int minMipMapFilter = 0;
-  int minFilter = 0;
-  int magFilter = 0;
+  GLuint width = 0;
+  GLuint height = 0;
+  GLuint mipmapLevel = 0;
+  GLuint internalFormat = 0;
+  GLuint format = 0;
+  GLuint wrapS = GL_CLAMP_TO_EDGE;
+  GLuint wrapT = GL_CLAMP_TO_EDGE;
+  GLuint minMipMapFilter = 0;
+  GLuint minFilter = 0;
+  GLuint magFilter = 0;
 };
 
 class Tex2D
@@ -39,7 +39,7 @@ public:
 
 
 private:
-  int m_ID;
+  GLuint m_ID;
   Tex2Ddata m_texData;
 
 
