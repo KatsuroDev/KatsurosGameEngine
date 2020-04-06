@@ -19,7 +19,7 @@ public:
   unsigned int m_ID;
 
   // Constructor reads and builds the shader
-  Shader();
+  Shader() {}
 
   void Compile(const char* vcode, const char* fcode);
   //void Compile(const std::string &code, int type);
