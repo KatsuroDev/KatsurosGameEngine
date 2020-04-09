@@ -13,7 +13,6 @@ public:
   Vec3(const Vec3 &vec);
   Vec3(float x, float y, float z);
   Vec3(const Vec2 &vec, float z);
-  //Vec3(float x, const Vec2 &vec);
 
   float Length() const;
   float Dot(const Vec3& vec);

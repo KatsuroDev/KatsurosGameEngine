@@ -31,40 +31,7 @@ Vec4::Vec4(const Vec3 &vec, float w)
   m_Y = vec.m_Y;
   m_Z = vec.m_Z;
 }
-/*
 
-Vec4::Vec4(const Vec2 &vec, const Vec2 &vec2)
-{
-    m_X = vec.m_X;
-    m_Y = vec.m_Y;
-    m_Z = vec2.m_X;
-    m_W = vec2.m_Y;
-}
-
-Vec4::Vec4(float x, float y, const Vec2 &vec)
-  : m_X(x), m_Y(y)
-{
-    m_Z = vec.m_X;
-    m_W = vec.m_Y;
-}
-
-Vec4::Vec4(float x, const Vec2 &vec, float w)
-  : m_X(x), m_W(w)
-{
-  m_Y = vec.m_X;
-  m_Z = vec.m_Y;
-}
-
-
-
-Vec4::Vec4(float x, const Vec3 &vec)
-  : m_X(x)
-{
-  m_Y = vec.m_X;
-  m_Z = vec.m_Y;
-  m_W = vec.m_Z;
-}
-*/
 /////////////////////////////////////////////////
 
 ///////////////// METHODS ///////////////////////

@@ -14,12 +14,6 @@ class Vec4
   Vec4(const Vec3 &vec, float w);
   Vec4(const Vec2 &vec, float z, float w);
 
-/*
-  Vec4(const Vec2 &vec, const Vec2 &vec2);
-  Vec4(float x, float y, const Vec2 &vec);
-  Vec4(float x, const Vec2 &vec, float w);
-  Vec4(float x, const Vec3 &vec);
-*/
 
   float Length() const;
   float Dot(const Vec4 &vec);
