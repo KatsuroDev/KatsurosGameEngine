@@ -57,3 +57,13 @@ Vec2 Vec2::operator/ (float scale)
 {
     return Vec2(m_X / scale, m_Y / scale);
 }
+
+// Bool overloading
+bool Vec2::operator== (const Vec2 &vec)
+{
+  if(m_X == vec.m_X && m_Y == vec.m_Y)
+    return true;
+  else
+    return false;
+}
+}

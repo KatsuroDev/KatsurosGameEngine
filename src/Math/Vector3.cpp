@@ -70,3 +70,12 @@ Vec3 Vec3::operator/ (float scale)
 {
   return Vec3(m_X/scale, m_Y/scale, m_Z/scale);
 }
+
+// Bool overloading
+bool Vec3::operator== (Vec3 vec)
+{
+  if(m_X == vec.m_X && m_Y == vec.m_Y && m_Z == vec.m_Z)
+    return true;
+  else
+    return false;
+}

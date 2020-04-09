@@ -1,6 +1,8 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
 
+#include "Vector2.h"
+
 class Vec3
 {
 public:
@@ -9,6 +11,7 @@ public:
   Vec3() {}
   Vec3(const Vec3 &vec);
   Vec3(float x, float y, float z);
+  Vec3(const Vec2 &vec, float z);
 
   float Length();
   float Dot(const Vec3& vec);
@@ -29,6 +32,19 @@ public:
   // vector/scalar overloading
   Vec3 operator* (float scale);
   Vec3 operator/ (float scale);
+
+  // Bool overloading
+  bool operator== (const Vec3 &vec);
+
+  /*
+   * operator!=
+   * operator<
+   * operator>
+   * operator<=
+   * operator>=
+   * operator<<
+   * add constructor
+  */
 
 };
 

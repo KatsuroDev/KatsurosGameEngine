@@ -25,6 +25,19 @@ public:
     // vector/scalar overloading
     Vec2 operator* (float scale);
     Vec2 operator/ (float scale);
+
+    // Bool overloading
+    bool operator== (const Vec2 &vec);
+
+    /*
+     * operator!=
+     * operator<
+     * operator>
+     * operator<=
+     * operator>=
+     * operator<<
+     * add constructor
+    */
 };
 
 #endif
