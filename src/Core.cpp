@@ -52,7 +52,7 @@ void Core::Start()
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3* sizeof(float)));
 
   glBindVertexArray(0);
-  Tex2D tex = FileManager::LoadTexture("./res/tex/ECS.png", texData);
+  Tex2D tex = FileManager::LoadTexture("./res/tex/image.png", texData);
   while(m_running)
   {
     glClear(GL_COLOR_BUFFER_BIT);
