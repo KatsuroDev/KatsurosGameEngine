@@ -7,6 +7,7 @@
 
 class Vec4
 {
+public:
   float m_X, m_Y, m_Z, m_W;
   Vec4() {}
   Vec4(const Vec4 &vec);
