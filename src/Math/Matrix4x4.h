@@ -7,7 +7,7 @@
 
 enum {
   XAXIS = 1,
-  YAXIS
+  YAXIS,
   ZAXIS
 };
 
