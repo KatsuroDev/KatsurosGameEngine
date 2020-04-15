@@ -3,8 +3,10 @@
 #include "Core.h"
 #include "Log.h"
 #include "MeshLoader.h"
+#include "FileManager.h"
 #include "Math.h"
 #include <cmath>
+
 
 int main()
 {
@@ -69,11 +71,10 @@ int main()
 
   // Singleton MeshLoader
   //Mesh mesh = MeshLoader::Load("object.obj");
-  //core->Start();
-//  delete core;
-  //delete window;
+  core->Start();
+  delete core;
+  delete window;
 
-  //std::cout << "\nYou just killed the wrong enemy.\n";
-  std::cout << "\nYou just saved the right ally.\n";
+  std::cout << "\nYou just killed the wrong enemy.\n";
   return 0;
 }

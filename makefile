@@ -47,13 +47,13 @@ endif
 
 # Define the linkers' flag. So which libraries we are linking to.
 ifeq ($(shell uname -s), Linux)
-LINKER_FLAGS = -I./inc/ -L./lib/Linux/ -lGLEW -lGL -lglfw
+LINKER_FLAGS = -I./inc/ -L./lib/Linux/ -lGLEW -lGL -lglfw -lSOIL
 endif
 ifeq ($(OS),Windows_NT)
-LINKER_FLAGS = -I"./inc/" -L"lib/Windows" -static  -std=c++14 -std=gnu++14 -Wunused-parameter -Wstrict-aliasing -lmingw32 -lglew32 -lglfw3 -lopengl32 -lglu32 -lgdi32 -dl #-I"./inc/steam/" -lsteam_api #-llua53 -dl
+LINKER_FLAGS = -I"./inc/" -L"lib/Windows" -static -std=c++14 -std=gnu++14 -Wunused-parameter -Wstrict-aliasing -lmingw32 -lglew32 -lglfw3 -llibSOIL -lopengl32 -lglu32 -lgdi32 -dl #-I"./inc/steam/" -lsteam_api #-llua53 -dl
 endif
 ifeq ($(shell uname -s), Darwin)
-LINKER_FLAGS = -I./inc/ -L./lib/macOS -framework OpenGL -lGLEW -lglfw
+LINKER_FLAGS = -I./inc/ -L./lib/macOS -framework OpenGL -lGLEW -lglfw -lSOIL
 endif
 
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
