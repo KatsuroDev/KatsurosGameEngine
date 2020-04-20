@@ -16,6 +16,9 @@ enum {
 class Mat4x4
 {
 public:
+  /*float** m_Mat = new float*[4];
+  Mat4x4() {for(int i = 0; i < 4; i++) {m_Mat[i] = new float[4];} m_Mat = {0};}
+  ~Mat4x4() {delete m_Mat;}*/
   float m_Mat[4][4] = {0};
   Mat4x4() {}
 
@@ -26,6 +29,7 @@ public:
   void Rotate(float radians, int axis);
   void Scale(float x, float y, float z);
   void Scale(const Vec3 &vec);
+  void Print();
 
   // Matrix / Matrix overloading
   Mat4x4 operator+(const Mat4x4 &mat);
@@ -43,8 +47,8 @@ public:
   Vec4 operator*(const Vec4 &vec);
 
   // Bool overloading
-  bool Mat4x4::operator==(const Mat4x4 &mat);
-  bool Mat4x4::operator!=(const Mat4x4 &mat);
+  bool operator==(const Mat4x4 &mat);
+  bool operator!=(const Mat4x4 &mat);
 
 };
 

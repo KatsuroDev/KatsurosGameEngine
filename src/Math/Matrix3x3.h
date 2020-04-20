@@ -17,6 +17,8 @@ public:
   void Rotate(float radians);
   void Scale(float x, float y);
   void Scale(const Vec2 &vec);
+  void Print();
+  void Ortho(float left, float right, float bottom, float top, float near, float far);
 
   // Matrix / Matrix overloading
   Mat3x3 operator+(const Mat3x3 &mat);
@@ -34,8 +36,8 @@ public:
   Vec3 operator*(const Vec3 &vec);
 
   // Bool overloading
-  bool Mat3x3::operator==(const Mat3x3 &mat);
-  bool Mat3x3::operator!=(const Mat3x3 &mat);
+  bool operator==(const Mat3x3 &mat);
+  bool operator!=(const Mat3x3 &mat);
 
 };
 
