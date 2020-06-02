@@ -31,6 +31,17 @@ void Mat3x3::Translate(const Vec2 &vec)
   m_Mat[2][1] += vec.m_Y;
 }
 
+void Mat3x3::SetPos(float x, float y)
+{
+  m_Mat[2][0] = x;
+  m_Mat[2][1] = y;
+}
+void Mat3x3::SetPos(const Vec2 &vec)
+{
+  m_Mat[2][0] = vec.m_X;
+  m_Mat[2][1] = vec.m_Y;
+}
+
 void Mat3x3::Rotate(float radians)
 {
   //radians

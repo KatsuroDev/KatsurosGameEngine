@@ -26,16 +26,17 @@ void Mat4x4::Identity()
 // Translate Methods
 void Mat4x4::Translate(float x, float y, float z)
 {
-  m_Mat[3][0] += x;
-  m_Mat[3][1] += y;
-  m_Mat[3][2] += z;
+  m_Mat[3][0] = x;
+  m_Mat[3][1] = y;
+  m_Mat[3][2] = z;
 }
 void Mat4x4::Translate(const Vec3 &vec)
 {
-  m_Mat[3][0] += vec.m_X;
-  m_Mat[3][1] += vec.m_Y;
-  m_Mat[3][2] += vec.m_Z;
+  m_Mat[3][0] = vec.m_X;
+  m_Mat[3][1] = vec.m_Y;
+  m_Mat[3][2] = vec.m_Z;
 }
+
 
 void Mat4x4::Rotate(float radians, int axis)
 {
@@ -89,6 +90,62 @@ void Mat4x4::Print()
   std::cout << m_Mat[2][0] << " " << m_Mat[2][1] << " "<< m_Mat[2][2] << " "<< m_Mat[2][3] << "\n";
   std::cout << m_Mat[3][0] << " " << m_Mat[3][1] << " "<< m_Mat[3][2] << " "<< m_Mat[3][3] << "\n";
 
+}
+
+void Mat4x4::Ortho(float left, float right, float bottom, float top, float near, float far)
+{
+  m_Mat[0][0] = 2 / (right - left);
+  m_Mat[1][1] = 2 / (top - bottom);
+  m_Mat[2][2] = -(2 / (far - near));
+
+  m_Mat[3][0] = -((right + left) / (right - left));
+  m_Mat[3][1] = -((top + bottom) / (top - bottom));
+  m_Mat[3][2] = -((far + near) / (far-near));
+}
+
+// Matrix 2D methods !
+void Mat4x4::Translate2D(float x, float y)
+{
+  m_Mat[3][0] = x;
+  m_Mat[3][1] = y;
+}
+void Mat4x4::Translate2D(const Vec2 &vec)
+{
+  m_Mat[3][0] = vec.m_X;
+  m_Mat[3][1] = vec.m_Y;
+}
+void Mat4x4::Rotate2D(float radians)
+{
+  m_Mat[0][0] = cos(radians);
+  m_Mat[0][1] = -(sin(radians));
+  m_Mat[1][0] = sin(radians);
+  m_Mat[1][1] = cos(radians);
+}
+void Mat4x4::Scale2D(float x, float y)
+{
+  float exx, exy;
+  exx = this->m_Mat[3][0];
+  exy = this->m_Mat[3][1];
+  Mat4x4 scaleMatrix;
+  scaleMatrix.Identity();
+  scaleMatrix.m_Mat[0][0] *= x;
+  scaleMatrix.m_Mat[1][1] *= y;
+  *this *= scaleMatrix;
+  this->m_Mat[3][0] = exx;
+  this->m_Mat[3][1] = exy;
+}
+void Mat4x4::Scale2D(const Vec2 &vec)
+{
+  float exx, exy;
+  exx = this->m_Mat[3][0];
+  exy = this->m_Mat[3][1];
+  Mat4x4 scaleMatrix;
+  scaleMatrix.Identity();
+  scaleMatrix.m_Mat[0][0] *= vec.m_X;
+  scaleMatrix.m_Mat[1][1] *= vec.m_Y;
+  *this *= scaleMatrix;
+  this->m_Mat[3][0] = exx;
+  this->m_Mat[3][1] = exy;
 }
 
 /////////////////////////////////////////////////
@@ -212,6 +269,7 @@ Mat4x4& Mat4x4::operator-=(const Mat4x4 &mat)
   m_Mat[3][1] -= mat.m_Mat[3][1];
   m_Mat[3][2] -= mat.m_Mat[3][2];
   m_Mat[3][3] -= mat.m_Mat[3][3];
+  return *this;
 }
 Mat4x4& Mat4x4::operator*=(const Mat4x4 &mat)
 {

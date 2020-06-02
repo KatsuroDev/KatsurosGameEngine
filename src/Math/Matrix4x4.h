@@ -16,9 +16,6 @@ enum {
 class Mat4x4
 {
 public:
-  /*float** m_Mat = new float*[4];
-  Mat4x4() {for(int i = 0; i < 4; i++) {m_Mat[i] = new float[4];} m_Mat = {0};}
-  ~Mat4x4() {delete m_Mat;}*/
   float m_Mat[4][4] = {0};
   Mat4x4() {}
 
@@ -30,6 +27,16 @@ public:
   void Scale(float x, float y, float z);
   void Scale(const Vec3 &vec);
   void Print();
+  void Ortho(float left, float right, float bottom, float top, float near, float far);
+  //void Perspective(float fov, float);
+
+  // Matrix 2D methods !
+  void Translate2D(float x, float y);
+  void Translate2D(const Vec2 &vec);
+  void Rotate2D(float radians);
+  void Scale2D(float x, float y);
+  void Scale2D(const Vec2 &vec);
+
 
   // Matrix / Matrix overloading
   Mat4x4 operator+(const Mat4x4 &mat);

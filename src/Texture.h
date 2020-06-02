@@ -40,7 +40,7 @@ public:
 
 private:
   GLuint m_ID;
-  Tex2Ddata m_texData;
+  Tex2Ddata m_TexData;
 
 
   //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);

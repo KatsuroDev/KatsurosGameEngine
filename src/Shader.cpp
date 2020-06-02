@@ -50,7 +50,7 @@ void Shader::SetFloat(const std::string &name, float value) const
 {
     glUniform2fv(glGetUniformLocation(ID, name.c_str()), 1, &value[0]);
 }*/
-void Shader::setVec2(const std::string &name, float x, float y) const
+void Shader::SetVec2(const std::string &name, float x, float y) const
 {
     glUniform2f(glGetUniformLocation(m_ID, name.c_str()), x, y);
 }
@@ -59,7 +59,7 @@ void Shader::setVec2(const std::string &name, float x, float y) const
 {
     glUniform3fv(glGetUniformLocation(ID, name.c_str()), 1, &value[0]);
 }*/
-void Shader::setVec3(const std::string &name, float x, float y, float z) const
+void Shader::SetVec3(const std::string &name, float x, float y, float z) const
 {
     glUniform3f(glGetUniformLocation(m_ID, name.c_str()), x, y, z);
 }
@@ -68,7 +68,7 @@ void Shader::setVec3(const std::string &name, float x, float y, float z) const
 {
     glUniform4fv(glGetUniformLocation(ID, name.c_str()), 1, &value[0]);
 }*/
-void Shader::setVec4(const std::string &name, float x, float y, float z, float w) const
+void Shader::SetVec4(const std::string &name, float x, float y, float z, float w) const
 {
     glUniform4f(glGetUniformLocation(m_ID, name.c_str()), x, y, z, w);
 }
@@ -78,12 +78,12 @@ void Shader::setVec4(const std::string &name, float x, float y, float z, float w
     glUniformMatrix2fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
 }*/
 // ------------------------------------------------------------------------
-void Shader::setMat3(const std::string &name, const Mat3x3 &mat) const
+void Shader::SetMat3(const std::string &name, const Mat3x3 &mat) const
 {
     glUniformMatrix3fv(glGetUniformLocation(m_ID, name.c_str()), 1, GL_FALSE, &mat.m_Mat[0][0]);
 }
 // ------------------------------------------------------------------------
-void Shader::setMat4(const std::string &name, const Mat4x4 &mat) const
+void Shader::SetMat4(const std::string &name, const Mat4x4 &mat) const
 {
     glUniformMatrix4fv(glGetUniformLocation(m_ID, name.c_str()), 1, GL_FALSE, &mat.m_Mat[0][0]);
 }

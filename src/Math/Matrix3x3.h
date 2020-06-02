@@ -14,6 +14,8 @@ public:
   void Identity();
   void Translate(float x, float y);
   void Translate(const Vec2 &vec);
+  void SetPos(float x, float y);
+  void SetPos(const Vec2 &vec);
   void Rotate(float radians);
   void Scale(float x, float y);
   void Scale(const Vec2 &vec);
