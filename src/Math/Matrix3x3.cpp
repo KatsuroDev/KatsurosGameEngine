@@ -1,5 +1,6 @@
 #include "Matrix3x3.h"
 #include <cmath>
+#include <iostream>
 
 ///////////////// METHODS ///////////////////////
 void Mat3x3::Identity()
@@ -21,13 +22,13 @@ void Mat3x3::Identity()
 // Translate methods
 void Mat3x3::Translate(float x, float y)
 {
-  m_Mat[0][2] += x;
-  m_Mat[1][2] += y;
+  m_Mat[2][0] += x;
+  m_Mat[2][1] += y;
 }
 void Mat3x3::Translate(const Vec2 &vec)
 {
-  m_Mat[0][2] += vec.m_X;
-  m_Mat[1][2] += vec.m_Y;
+  m_Mat[2][0] += vec.m_X;
+  m_Mat[2][1] += vec.m_Y;
 }
 
 void Mat3x3::Rotate(float radians)
@@ -42,15 +43,37 @@ void Mat3x3::Rotate(float radians)
 //Scale methods
 void Mat3x3::Scale(float x, float y)
 {
-  m_Mat[0][0] *= x;
-  m_Mat[1][1] *= y;
+  Mat3x3 scaleMatrix;
+  scaleMatrix.Identity();
+  scaleMatrix.m_Mat[0][0] *= x;
+  scaleMatrix.m_Mat[1][1] *= y;
+  *this *= scaleMatrix;
 }
 
 void Mat3x3::Scale(const Vec2 &vec)
 {
-  m_Mat[0][0] *= vec.m_X;
-  m_Mat[1][1] *= vec.m_Y;
+  Mat3x3 scaleMatrix;
+  scaleMatrix.Identity();
+  scaleMatrix.m_Mat[0][0] *= vec.m_X;
+  scaleMatrix.m_Mat[1][1] *= vec.m_Y;
+  *this *= scaleMatrix;
 }
+
+void Mat3x3::Print()
+{
+  std::cout << m_Mat[0][0] << " " << m_Mat[0][1] << " "<< m_Mat[0][2] << "\n";
+  std::cout << m_Mat[1][0] << " " << m_Mat[1][1] << " "<< m_Mat[1][2] << "\n";
+  std::cout << m_Mat[2][0] << " " << m_Mat[2][1] << " "<< m_Mat[2][2] << "\n";
+}
+
+void Mat3x3::Ortho(float left, float right, float bottom, float top, float near, float far)
+{
+  m_Mat[0][0] = 2 / (right - left);
+  m_Mat[1][1] = 2 / (top - bottom);
+  m_Mat[2][2] = -(2 / (far - near));
+}
+
+
 /////////////////////////////////////////////////
 
 //////////// OPERATOR OVERLOADING ///////////////

@@ -11,6 +11,11 @@
 int main()
 {
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8804b4aed6ffb707e60826ed3d55d9718291b922
   Window* window = new Window(800, 600, "Test");
   Core* core = new Core(window);
   Log::Info("Hello World!");

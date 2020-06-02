@@ -1,5 +1,6 @@
 #include "Matrix4x4.h"
 #include <cmath>
+#include <iostream>
 
 ///////////////// METHODS ///////////////////////
 
@@ -12,28 +13,28 @@ void Mat4x4::Identity()
 
   m_Mat[0][1] = 0;
   m_Mat[0][2] = 0;
-  m_Mat[3][3] = 0;
+  m_Mat[0][3] = 0;
 
   m_Mat[1][0] = 0;
   m_Mat[1][2] = 0;
-  m_Mat[3][3] = 0;
+  m_Mat[1][3] = 0;
 
   m_Mat[2][0] = 0;
   m_Mat[2][1] = 0;
-  m_Mat[3][3] = 0;
+  m_Mat[2][3] = 0;
 }
 // Translate Methods
 void Mat4x4::Translate(float x, float y, float z)
 {
-  m_Mat[0][3] += x;
-  m_Mat[1][3] += y;
-  m_Mat[2][3] += z;
+  m_Mat[3][0] += x;
+  m_Mat[3][1] += y;
+  m_Mat[3][2] += z;
 }
 void Mat4x4::Translate(const Vec3 &vec)
 {
-  m_Mat[0][3] += vec.m_X;
-  m_Mat[1][3] += vec.m_Y;
-  m_Mat[2][3] += vec.m_Z;
+  m_Mat[3][0] += vec.m_X;
+  m_Mat[3][1] += vec.m_Y;
+  m_Mat[3][2] += vec.m_Z;
 }
 
 void Mat4x4::Rotate(float radians, int axis)
@@ -61,20 +62,33 @@ void Mat4x4::Rotate(float radians, int axis)
       m_Mat[1][1] = cos(radians);
       break;
   }
-
 }
 // Scale methods
 void Mat4x4::Scale(float x, float y, float z)
 {
-  m_Mat[0][0] *= x;
-  m_Mat[1][1] *= y;
-  m_Mat[2][2] *= z;
+  Mat4x4 scaleMatrix;
+  scaleMatrix.Identity();
+  scaleMatrix.m_Mat[0][0] *= x;
+  scaleMatrix.m_Mat[1][1] *= y;
+  scaleMatrix.m_Mat[2][2] *= z;
+  *this *= scaleMatrix;
 }
 void Mat4x4::Scale(const Vec3 &vec)
 {
-  m_Mat[0][0] *= vec.m_X;
-  m_Mat[1][1] *= vec.m_Y;
-  m_Mat[2][2] *= vec.m_Z;
+  Mat4x4 scaleMatrix;
+  scaleMatrix.Identity();
+  scaleMatrix.m_Mat[0][0] *= vec.m_X;
+  scaleMatrix.m_Mat[1][1] *= vec.m_Y;
+  scaleMatrix.m_Mat[2][2] *= vec.m_Z;
+  *this *= scaleMatrix;
+}
+void Mat4x4::Print()
+{
+  std::cout << m_Mat[0][0] << " " << m_Mat[0][1] << " "<< m_Mat[0][2] << " "<< m_Mat[0][3] << "\n";
+  std::cout << m_Mat[1][0] << " " << m_Mat[1][1] << " "<< m_Mat[1][2] << " "<< m_Mat[1][3] << "\n";
+  std::cout << m_Mat[2][0] << " " << m_Mat[2][1] << " "<< m_Mat[2][2] << " "<< m_Mat[2][3] << "\n";
+  std::cout << m_Mat[3][0] << " " << m_Mat[3][1] << " "<< m_Mat[3][2] << " "<< m_Mat[3][3] << "\n";
+
 }
 
 /////////////////////////////////////////////////
